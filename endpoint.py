@@ -30,7 +30,7 @@ data = {"data":
             "cons.price.idx": 92.893,
             "cons.conf.idx": -46.2,
             "euribor3m": 1.299,
-            "nr.employed": 5099.1,
+            "nr.employed": 5099.1
           },
           {
             "age": 87,
@@ -52,7 +52,7 @@ data = {"data":
             "cons.price.idx": 92.893,
             "cons.conf.idx": -46.2,
             "euribor3m": 1.299,
-            "nr.employed": 5099.1,
+            "nr.employed": 5099.1
           },
       ]
     }
