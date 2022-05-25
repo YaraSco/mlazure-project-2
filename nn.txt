@@ -1,0 +1,26 @@
+cd C:/Users/demouser/Desktop/mlazure-project-2-main/mlazure-project-2-main/starter_files
+
+az extension add -n azure-cli-ml
+
+
+cd swagger
+python serve.pyy
+
+python logs.py
+
+
+bash swagger.sh
+
+wget http://bcd82997-52a6-4c75-bd03-10f6c77bea30.southcentralus.azurecontainer.io/swagger.json
+
+
+http://localhost:9010
+
+http://localhost:9010/swagger.json
+
+python3 serve.py 8000
+
+http://localhost:8000/swagger.jsonhttp://localhost:8000/swagger.json
+
+
+
