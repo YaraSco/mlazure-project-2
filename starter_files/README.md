@@ -112,7 +112,7 @@ In the "Pipeline endpoints" section, we take this proof of the pipeline endpoint
 We wait for the scheduled run "pipeline-rest-endpoint" until it is completed. So, we get the following screenshots in "Pipelines jobs" section.
 
 <img src="./screenshots/all_pipelines_completed.PNG">
-<img src="./screenshots/pipeline-rest-endpoint.PNG">
+<img src="./screenshots/pipeline_rest_endpoint.PNG">
 
 
 ## Standout Suggestions
