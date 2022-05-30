@@ -1,10 +1,9 @@
 # Operationalizing Machine Learning
 
-*TODO:* Write an overview to your project.
-This project is part of the Udacity Azure ML Nanodegree. In this project, we deploy the best model in Azure Machine Learning Studio and we publish an ML pipeline.
+This project is part of the Udacity Azure ML Nanodegree. In this project, we deploy the best model in Azure Machine Learning Studio and we publish an ML pipeline. Also, we use python SDK to find the best model.
 
 ## Architectural Diagram
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
+In this section, we provide an architectual diagram of the project and a  description of each step. 
 
 <img src="./screenshots/project_architecture.PNG">
 
@@ -40,7 +39,6 @@ We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure
 We focus on "Create Pipeline and AutoMLStep" and "Publish and run from REST endpoint" sections. In the first section, we create a new pipeline to submit our experiment which is to train AutoML with Bank Marketing dataset and produce the best algorithm for classification. We obtain the same algorithm "Voting Ensemble". After that, we retrieve the best model from our pipeline run. In the second section, we publish our ML pipeline into Workspace to be able to rerun it. Indeed, we rerun our pipeline using the authentication and REST endpoint, we send it as a request.
  
 ## Key Steps
-*TODO*: Write a short discription of the key steps. Remember to include all the screenshots required to demonstrate key steps.
 
 In this part we demonstrate each previous step by their screenshots.
 
@@ -82,10 +80,41 @@ We run the 'endpoint.py' script. Then, we obtain a 'data.json' file as an output
 <img src="./screenshots/data_json.PNG">
 <img src="./screenshots/results_endpoint_cmd.PNG">
 
-## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+3- Publishing an ML pipeline
+
+  - Create and publish a pipeline
+
+We use the same experiment "bankmmarketing-classification" to create a new pipeline. Then, we submit this pipeline and wait until its status is completed. We can find the pipeline in the 'Pipelines' section of Azure ML Studio.
+
+<img src="./screenshots/pipeline_created.PNG">
+
+When, the experiment is completed, we can follow the pipline run status. So, we obtain the Bankmarketing dataset with the AutoML module, as shown below. 
+
+<img src="./screenshots/run_architecture.PNG">
+
+We publish our pipeline into our workspace. We wait until the status is 'Active' and we have a REST endpoint to interact with this pipeline.
+
+<img src="./screenshots/published.PNG">
+
+  - Configure a pipeline with the python SDK
+
+We use the "Use RunDetails Widget" to follow the update of each stp run. Since we can not preserve the widget in the Jupyter Notebook, we took two screenshots depending on the status 'Running' and 'Finished'
+
+<img src="./screenshots/widget_run_running.PNG">
+<img src="./screenshots/widget_run_completed.PNG">
+ 
+  - Use a REST endpoint to interact with a pipeline
+
+In the "Pipeline endpoints" section, we take this proof of the pipeline endpoint status as 'Active'.
+
+<img src="./screenshots/endpoint_active_scheduled_run.PNG">
+
+We wait for the scheduled run "pipeline-rest-endpoint" until it is completed. So, we get the following screenshots in "Pipelines jobs" section.
+
+<img src="./screenshots/all_pipelines_completed.PNG">
+<img src="./screenshots/pipeline_rest_endpoint.PNG">
+
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
 
 When we configure AutoML in the Jupyter Notebook, we add another parameter "Enable ONNX compatible models" as True. This parameter let us save the model in ONNX format, so that we can export it later.
