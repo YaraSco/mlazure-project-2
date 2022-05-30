@@ -5,7 +5,9 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we dep
 
 ## Architectural Diagram
 *TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
+
 We have three main sections in the above architectural diagram:
+
 1- Prepare the dataset
 We use this tabular [Bank Marketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). It has 21 attributes including the target 'y'. This dataset aims to predit if a potential client would subscribe to a term deposit or not at the bank. Thus, the target 'y' contains two classes 'yes' and 'no'.
 
@@ -28,7 +30,9 @@ In the 'Endpoints' section, where is our deployed model, we download 'swagger.js
 We reorder our two data examples as obtained in 'swagger.json' file. Also, we use urllib.request to consume the model endpoints. We change the variables 'url' and 'api_key' to match respectively the generated URI after deployment and the primary key for our service.
 
 3- Publishing an ML pipeline
-We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure a compute instance to run this notebook. We reuse the same experiment and Bank Marketing dataset. 
+We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure a compute instance to run this notebook. We reuse the same experiment and Bank Marketing dataset. We run through all the cells. 
+
+We focus on "Create Pipeline and AutoMLStep" and "Publish and run from REST endpoint" sections. In the first section, we create a new pipeline to submit our experiment which is to train AutoML with Bank Marketing dataset and produce the best algorithm for classification. We obtain the same algorithm "Voting Ensemble". After that, we retrieve the best model from our pipeline run. In the second section, we publish our ML pipeline into Workspace to be able to rerun it. Indeed, we rerun our pipeline using the authentication and REST endpoint, we send it as a request.
  
 ## Key Steps
 *TODO*: Write a short discription of the key steps. Remember to include all the screenshots required to demonstrate key steps. 
@@ -38,3 +42,5 @@ We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
+When we configure AutoML in the Jupyter Notebook, we add another parameter "Enable ONNX compatible models" as True. This parameter let us save the model in ONNX format, so that we can export it later.
