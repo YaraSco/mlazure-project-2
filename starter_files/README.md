@@ -65,7 +65,15 @@ As we can see the Application Insights changed from 'False' to 'True'.
 <img src="./screenshots/app_insights_false.PNG">
 <img src="./screenshots/app_insights_true.PNG">
 
-Indeed, we achieved this by executing the script 'logs.py'.
+Indeed, we achieved this by executing the script 'logs.py' in the command line.
+
+<img src="./screenshots/logs.py_bash.PNG">
+
+- Consume the deployed model using Swagger
+
+We have the following proof that swagger runs on localhost
+
+<img src="./screenshots/swagger_localhost.PNG">
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
