@@ -117,4 +117,4 @@ We wait for the scheduled run "pipeline-rest-endpoint" until it is completed. So
 
 ## Standout Suggestions
 
-When we configure AutoML in the Jupyter Notebook, we add another parameter "Enable ONNX compatible models" as True. This parameter let us save the model in ONNX format, so that we can export it later.
+When we configure AutoML in the Jupyter Notebook, we add another parameter "Enable ONNX compatible models" as True. This parameter let us save the model in ONNX format, so that we can export it later. Also, we updated the "benchmark.sh" file with the correct URI and primary key. However, when we executed "bash benchmark.sh" in command line, we had an issue. Indeed, we had to install something we could not access.
