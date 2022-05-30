@@ -32,7 +32,7 @@ We download 'config.json' and we put it in the same directory as 'logs.py'. The 
 In the 'Endpoints' section, where is our deployed model, we download 'swagger.json'. Then, we put it in 'swagger' directory. Also, we change the port in 'swagger.sh' from 80 to 9010. So, we run 'bash swagger.sh' in the command line. This will download the latest Swagger container, and it will run in the 9010 port. We start a Python server on port 8000, by running in another command line the script 'serve.py'. 
 
   - Consume Model Endpoints
-We reorder our two data examples as obtained in 'swagger.json' file. Also, we use urllib.request to consume the model endpoints. We change the variables 'url' and 'api_key' to match respectively the generated URI after deployment and the primary key for our service.
+In 'endpoint.py' file, we reorder our two data examples as obtained in 'swagger.json' file. Also, we use "urllib.request" to consume the model endpoints. We change the variables 'url' and 'api_key' to match respectively the generated URI after deployment and the primary key for our service.
 
 3- Publishing an ML pipeline
 We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure a compute instance to run this notebook. We reuse the same experiment and Bank Marketing dataset. We run through all the cells. 
@@ -58,7 +58,7 @@ This is a proof that our Bank Marketing dataset has been registered in ML Studio
 <img src="./screenshots/experiment_completed.PNG">
 <img src="./screenshots/best_model.PNG">
 
-- Enable Application Insights and retrieve logs
+  - Enable Application Insights and retrieve logs
 
 As we can see the Application Insights changed from 'False' to 'True'. 
 
@@ -69,11 +69,18 @@ Indeed, we achieved this by executing the script 'logs.py' in the command line.
 
 <img src="./screenshots/logs.py_bash.PNG">
 
-- Consume the deployed model using Swagger
+  - Consume the deployed model using Swagger
 
-We have the following proof that swagger runs on localhost
+After that we run docker with 'swagger.sh' and a Python serveron port 8000, we obtain the following proof that swagger runs on localhost on port 9010.
 
 <img src="./screenshots/swagger_localhost.PNG">
+
+  - Consume Model Endpoints
+
+We run the 'endpoint.py' script. Then, we obtain a 'data.json' file as an output and the following result for our prediction request.
+
+<img src="./screenshots/data_json.PNG">
+<img src="./screenshots/results_endpoint_cmd.PNG">
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
