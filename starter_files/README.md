@@ -13,14 +13,17 @@ We use this tabular [Bank Marketing dataset](https://automlsamplenotebookdata.bl
 
 2- Deployment of the best model in Azure ML Studio
 We have these 5 following steps to achieve:
-  - Create a new Automated Machine Learning experiment. 
+  - Create a new Automated Machine Learning experiment
  We use a new compute cluster, so we select "Standard_DS12_v2 for the virtual machine size, and 1 as the minimum number of nodes. Also, we reduce Exit criterion to 1 hour and the Concurrency to 5. Then, we run the experiment using classification, with "Explain best model" checked.
  
   - Deploy the model with Authentication and Azure Container Instance. 
 We select the best model "Voting Ensemble", with AUC weighted 0.947, to deploy. Then, we check "Authentication" and Azure Cotainer Instance.
 
   - Enable Application Insights and retrieve logs
-We ensure the command 'az' is installed.///////////img////////
+We ensure the command 'az' is installed.
+
+<img src="./screenshots/az_installed.PNG">
+
 We download 'config.json' and we put it in the same directory as 'logs.py'. The script 'logs.py' enables application insights and print the retrieved logs in the command line.
 
   - Consume the deployed model using Swagger
@@ -35,7 +38,23 @@ We upload the Jupyter Notebook in Azure ML Studio; then, we create and configure
 We focus on "Create Pipeline and AutoMLStep" and "Publish and run from REST endpoint" sections. In the first section, we create a new pipeline to submit our experiment which is to train AutoML with Bank Marketing dataset and produce the best algorithm for classification. We obtain the same algorithm "Voting Ensemble". After that, we retrieve the best model from our pipeline run. In the second section, we publish our ML pipeline into Workspace to be able to rerun it. Indeed, we rerun our pipeline using the authentication and REST endpoint, we send it as a request.
  
 ## Key Steps
-*TODO*: Write a short discription of the key steps. Remember to include all the screenshots required to demonstrate key steps. 
+*TODO*: Write a short discription of the key steps. Remember to include all the screenshots required to demonstrate key steps.
+
+In this part we demonstrate each previous step by their screenshots.
+
+1- Prepare the dataset
+
+This is a proof that our Bank Marketing dataset has been registered in ML Studio. So, we can use it to train our model in Azure ML Studio and with Jupyter Notebook.
+
+<img src="./screenshots/datastore_bankmarketing.PNG">
+
+2- Deployment of the best model in Azure ML Studio
+  - Create a new Automated Machine Learning experiment
+ After waiting for our experiment to end successfuly we select the best model. 
+ 
+<img src="./screenshots/experiment_completed.PNG">
+<img src="./screenshots/best_model.PNG">
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
