@@ -6,6 +6,8 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we dep
 ## Architectural Diagram
 *TODO*: Provide an architectual diagram of the project and give an introduction of each step. An architectural diagram is an image that helps visualize the flow of operations from start to finish. In this case, it has to be related to the completed project, with its various stages that are critical to the overall flow. For example, one stage for managing models could be "using Automated ML to determine the best model". 
 
+<img src="./screenshots/project_architecture.PNG">
+
 We have three main sections in the above architectural diagram:
 
 1- Prepare the dataset
@@ -50,11 +52,20 @@ This is a proof that our Bank Marketing dataset has been registered in ML Studio
 
 2- Deployment of the best model in Azure ML Studio
   - Create a new Automated Machine Learning experiment
+  
  After waiting for our experiment to end successfuly we select the best model. 
  
 <img src="./screenshots/experiment_completed.PNG">
 <img src="./screenshots/best_model.PNG">
 
+- Enable Application Insights and retrieve logs
+
+As we can see the Application Insights changed from 'False' to 'True'. 
+
+<img src="./screenshots/app_insights_false.PNG">
+<img src="./screenshots/app_insights_true.PNG">
+
+Indeed, we achieved this by executing the script 'logs.py'.
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
