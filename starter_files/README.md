@@ -80,7 +80,7 @@ After that we run docker with 'swagger.sh' and a Python serveron port 8000, we o
 We run the 'endpoint.py' script. Then, we obtain a 'data.json' file as an output and the following result for our prediction request.
 
 <img src="./screenshots/data_json.PNG">
-<img src="./screenshots/results_endpoints_cmd.PNG">
+<img src="./screenshots/results_endpoint_cmd.PNG">
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
