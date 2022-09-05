@@ -1,6 +1,6 @@
 # Operationalizing Machine Learning
 
-This project is part of the Udacity Azure ML Nanodegree. In this project, we deploy the best model in Azure Machine Learning Studio and we publish an ML pipeline. Also, we use python SDK to find the best model.
+The project is about the bank marketing campaign. We want to classify the clients as subscribers or not to a term deposit at the bank. To resolve this ML problem, we train the model using AutoML in the Azure ML Studio and with Python SDK. Then, we deploy the best model to consume it using the REST endpoint. Also, we operate the pipline to submit our ML experiment and interact with it using the REST endpoint.
 
 ## Architectural Diagram
 In this section, we provide an architectual diagram of the project and a  description of each step. 
