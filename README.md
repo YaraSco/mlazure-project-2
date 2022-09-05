@@ -5,7 +5,7 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, we dep
 ## Architectural Diagram
 In this section, we provide an architectual diagram of the project and a  description of each step. 
 
-<img src="./screenshots/project_architecture.PNG">
+<img src="./starter_files/screenshots/project_architecture.PNG">
 
 We have three main sections in the above architectural diagram:
 
@@ -23,7 +23,7 @@ We select the best model "Voting Ensemble", with AUC weighted 0.947, to deploy. 
   - Enable Application Insights and retrieve logs
 We ensure the command 'az' is installed.
 
-<img src="./screenshots/az_installed.PNG">
+<img src="./starter_files/screenshots/az_installed.PNG">
 
 We download 'config.json' and we put it in the same directory as 'logs.py'. The script 'logs.py' enables application insights and print the retrieved logs in the command line.
 
@@ -46,39 +46,39 @@ In this part we demonstrate each previous step by their screenshots.
 
 This is a proof that our Bank Marketing dataset has been registered in ML Studio. So, we can use it to train our model in Azure ML Studio and with Jupyter Notebook.
 
-<img src="./screenshots/datastore_bankmarketing.PNG">
+<img src="./starter_files/screenshots/datastore_bankmarketing.PNG">
 
 2- Deployment of the best model in Azure ML Studio
   - Create a new Automated Machine Learning experiment
   
  After waiting for our experiment to end successfuly we select the best model. 
  
-<img src="./screenshots/experiment_completed.PNG">
-<img src="./screenshots/best_model.PNG">
+<img src="./starter_files/screenshots/experiment_completed.PNG">
+<img src="./starter_files/screenshots/best_model.PNG">
 
   - Enable Application Insights and retrieve logs
 
 As we can see the Application Insights changed from 'False' to 'True'. 
 
-<img src="./screenshots/app_insights_false.PNG">
-<img src="./screenshots/app_insights_true.PNG">
+<img src="./starter_files/screenshots/app_insights_false.PNG">
+<img src="./starter_files/screenshots/app_insights_true.PNG">
 
 Indeed, we achieved this by executing the script 'logs.py' in the command line.
 
-<img src="./screenshots/logs.py_bash.PNG">
+<img src="./starter_files/screenshots/logs.py_bash.PNG">
 
   - Consume the deployed model using Swagger
 
 After that we run docker with 'swagger.sh' and a Python serveron port 8000, we obtain the following proof that swagger runs on localhost on port 9010.
 
-<img src="./screenshots/swagger_localhost.PNG">
+<img src="./starter_files/screenshots/swagger_localhost.PNG">
 
   - Consume Model Endpoints
 
 We run the 'endpoint.py' script. Then, we obtain a 'data.json' file as an output and the following result for our prediction request.
 
-<img src="./screenshots/data_json.PNG">
-<img src="./screenshots/results_endpoint_cmd.PNG">
+<img src="./starter_files/screenshots/data_json.PNG">
+<img src="./starter_files/screenshots/results_endpoint_cmd.PNG">
 
 3- Publishing an ML pipeline
 
@@ -86,33 +86,33 @@ We run the 'endpoint.py' script. Then, we obtain a 'data.json' file as an output
 
 We use the same experiment "bankmmarketing-classification" to create a new pipeline. Then, we submit this pipeline and wait until its status is completed. We can find the pipeline in the 'Pipelines' section of Azure ML Studio.
 
-<img src="./screenshots/pipeline_created.PNG">
+<img src="./starter_files/screenshots/pipeline_created.PNG">
 
 When, the experiment is completed, we can follow the pipline run status. So, we obtain the Bankmarketing dataset with the AutoML module, as shown below. 
 
-<img src="./screenshots/run_architecture.PNG">
+<img src="./starter_files/screenshots/run_architecture.PNG">
 
 We publish our pipeline into our workspace. We wait until the status is 'Active' and we have a REST endpoint to interact with this pipeline.
 
-<img src="./screenshots/published.PNG">
+<img src="./starter_files/screenshots/published.PNG">
 
   - Configure a pipeline with the python SDK
 
 We use the "Use RunDetails Widget" to follow the update of each stp run. Since we can not preserve the widget in the Jupyter Notebook, we took two screenshots depending on the status 'Running' and 'Finished'
 
-<img src="./screenshots/widget_run_running.PNG">
-<img src="./screenshots/widget_run_completed.PNG">
+<img src="./starter_files/screenshots/widget_run_running.PNG">
+<img src="./starter_files/screenshots/widget_run_completed.PNG">
  
   - Use a REST endpoint to interact with a pipeline
 
 In the "Pipeline endpoints" section, we take this proof of the pipeline endpoint status as 'Active'.
 
-<img src="./screenshots/endpoint_active_scheduled_run.PNG">
+<img src="./starter_files/screenshots/endpoint_active_scheduled_run.PNG">
 
 We wait for the scheduled run "pipeline-rest-endpoint" until it is completed. So, we get the following screenshots in "Pipelines jobs" section.
 
-<img src="./screenshots/all_pipelines_completed.PNG">
-<img src="./screenshots/pipeline_rest_endpoint.PNG">
+<img src="./starter_files/screenshots/all_pipelines_completed.PNG">
+<img src="./starter_files/screenshots/pipeline_rest_endpoint.PNG">
 
 
 ## Standout Suggestions
